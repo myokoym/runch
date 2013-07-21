@@ -17,8 +17,8 @@ module Runch
           FileUtils.cp(file, dir)
           basename = File.basename(file, ".*")
           filename = File.basename(file)
-          main_source = "#{dir}/#{filename}"
-          executable = "#{dir}/#{basename}"
+          main_source = File.join(dir, filename)
+          executable = File.join(dir, basename)
           system("gcc", "-o", executable, main_source)
           system(executable)
         end
