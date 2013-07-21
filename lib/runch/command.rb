@@ -16,7 +16,8 @@ module Runch
         arguments.each do |file|
           FileUtils.cp(file, dir)
           basename = File.basename(file, ".*")
-          system("gcc", "-o", "#{dir}/#{basename}", file)
+          filename = File.basename(file)
+          system("gcc", "-o", "#{dir}/#{basename}", "#{dir}/#{filename}")
           system("#{dir}/#{basename}")
         end
       end
