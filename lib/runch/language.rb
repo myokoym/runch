@@ -1,4 +1,5 @@
 require "runch/language/c"
+require "runch/language/java"
 
 module Runch
   module Language
