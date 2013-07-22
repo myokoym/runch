@@ -9,10 +9,17 @@ A launcher for source code as interpreter.
 ## Support Languages
 
   * C
+  * Java
 
 ## Usage
 
+### C
+
     runch hello.c
+
+### Java
+
+    runch Hello.java
 
 ## Contributing
 
