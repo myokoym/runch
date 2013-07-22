@@ -2,9 +2,13 @@ require "tmpdir"
 
 module Runch
   class Language
-    def self.run(arguments)
+    def initialize(arguments)
+      @arguments = arguments
+    end
+
+    def run
       Dir.mktmpdir("runch") do |dir|
-        arguments.each do |file|
+        @arguments.each do |file|
           FileUtils.cp(file, dir)
           basename = File.basename(file, ".*")
           filename = File.basename(file)

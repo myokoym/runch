@@ -1,4 +1,4 @@
-require "tmpdir"
+require "runch/language"
 
 module Runch
   class Command
@@ -12,17 +12,7 @@ module Runch
     end
 
     def run(arguments)
-      Dir.mktmpdir("runch") do |dir|
-        arguments.each do |file|
-          FileUtils.cp(file, dir)
-          basename = File.basename(file, ".*")
-          filename = File.basename(file)
-          main_source = File.join(dir, filename)
-          executable = File.join(dir, basename)
-          system("gcc", "-o", executable, main_source)
-          system(executable)
-        end
-      end
+      Language.new(arguments).run
     end
   end
 end
