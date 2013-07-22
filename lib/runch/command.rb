@@ -12,7 +12,7 @@ module Runch
     end
 
     def run(arguments)
-      Language.new(arguments).run
+      Language.new(arguments[0], arguments[1..-1]).run
     end
   end
 end
