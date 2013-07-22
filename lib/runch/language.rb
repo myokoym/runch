@@ -17,23 +17,23 @@ module Runch
 
     private
     def copy(dir)
-        FileUtils.cp(@main_source, dir)
-        @files.each do |file|
-          FileUtils.cp_r(file, dir)
-        end
+      FileUtils.cp(@main_source, dir)
+      @files.each do |file|
+        FileUtils.cp_r(file, dir)
+      end
     end
 
     def compile(dir)
-        basename = File.basename(@main_source, ".*")
-        filename = File.basename(@main_source)
-        main_source = File.join(dir, filename)
-        executable = File.join(dir, basename)
-        system("gcc", "-o", executable, main_source)
-        executable
+      basename = File.basename(@main_source, ".*")
+      filename = File.basename(@main_source)
+      main_source = File.join(dir, filename)
+      executable = File.join(dir, basename)
+      system("gcc", "-o", executable, main_source)
+      executable
     end
 
     def execute(executable)
-        system(executable)
+      system(executable)
     end
   end
 end
