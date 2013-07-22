@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Runch::VERSION
   spec.authors       = ["Masafumi Yokoyama"]
   spec.email         = ["myokoym@gmail.com"]
-  spec.description   = %q{A launcher as interpreter.}
-  spec.summary       = %q{A launcher as interpreter.}
+  spec.description   = %q{A launcher for source code as interpreter.}
+  spec.summary       = %q{A launcher for source code as interpreter.}
   spec.homepage      = "https://github.com/myokoym/runch"
   spec.license       = "MIT"
 

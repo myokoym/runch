@@ -1,6 +1,6 @@
 # Runch
 
-A launcher as interpreter.
+A launcher for source code as interpreter.
 
 ## Installation
 
