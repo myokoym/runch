@@ -8,26 +8,26 @@ module Runch
     end
 
     def run
-      Dir.mktmpdir("runch") do |dir|
-        copy(dir)
-        executable = compile(dir)
+      Dir.mktmpdir("runch") do |tmpdir|
+        copy(tmpdir)
+        executable = compile(tmpdir)
         execute(executable)
       end
     end
 
     private
-    def copy(dir)
-      FileUtils.cp(@main_source, dir)
+    def copy(tmpdir)
+      FileUtils.cp(@main_source, tmpdir)
       @files.each do |file|
-        FileUtils.cp_r(file, dir)
+        FileUtils.cp_r(file, tmpdir)
       end
     end
 
-    def compile(dir)
+    def compile(tmpdir)
       basename = File.basename(@main_source, ".*")
       filename = File.basename(@main_source)
-      main_source = File.join(dir, filename)
-      executable = File.join(dir, basename)
+      main_source = File.join(tmpdir, filename)
+      executable = File.join(tmpdir, basename)
       system("gcc", "-o", executable, main_source)
       executable
     end
