@@ -12,6 +12,15 @@ A launcher for source code as interpreter.
   * C++ (extentions: cc, cp, cpp, cxx)
   * Java
 
+## Requirements
+
+  * C
+    * gcc
+  * C++
+    * g++
+  * Java
+    * javac
+
 ## Usage
 
 They look like an interpreter!
