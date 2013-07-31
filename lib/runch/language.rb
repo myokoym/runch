@@ -10,7 +10,7 @@ module Runch
       if /\A(cc|cp|cpp|cxx)\z/ =~ extname
         CC.new(main_source, files)
       else
-      const_get(extname.capitalize).new(main_source, files)
+        const_get(extname.capitalize).new(main_source, files)
       end
     end
   end
