@@ -9,13 +9,20 @@ A launcher for source code as interpreter.
 ## Support Languages
 
   * C
+  * C++ (extentions: cc, cp, cpp, cxx)
   * Java
 
 ## Usage
 
+They look like an interpreter!
+
 ### C
 
     runch hello.c
+
+### C++
+
+    runch hello.cc
 
 ### Java
 
